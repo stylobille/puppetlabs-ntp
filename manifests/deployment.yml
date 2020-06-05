@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: "aks"
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "aks"
+    spec:
+      containers:
+        - name: "aks"
+          image: "catsndoggs.azurecr.io/aks"
+          ports:
+          - containerPort: 80
